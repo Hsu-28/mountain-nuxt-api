@@ -1,0 +1,5 @@
+html {
+    background-color: #dddddd;
+    --font-black: rgb(24, 24, 24);
+    --font-white: rgb(231, 231, 231);
+}

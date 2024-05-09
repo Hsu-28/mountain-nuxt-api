@@ -1,0 +1,236 @@
+.main-intro {
+    
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+h3{
+    font-size: 24px;
+    display: block;
+    margin: 30px 0;
+    font-weight: 800; 
+
+}
+.content > div {
+    width: 49%;
+}
+.content-img img{
+    width: 100%;
+}
+
+.content-p {
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 18px;
+  
+}
+.titles {
+    height: 24%;
+    display: flex;
+
+}
+.title {
+    width: 30%;
+    border: 1px solid rgb(198, 198, 198);
+    background-color: rgb(229, 229, 229);
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100%; /* 使容器铺满整个视口高度 */
+} 
+
+.title + div{
+    padding-left:10px ;
+    display: flex;
+    border: 1px solid rgb(198, 198, 198);
+    justify-content: left; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100%; /* 使容器铺满整个视口高度 */
+    width: 100%;
+} 
+
+.info {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.weather-map-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.item-container {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: #DDDDDD;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto -40px auto;
+    /* padding: 10px 0; */
+    font-size: 18px;
+    /* border: 1px solid white; */
+    box-sizing: border-box;
+    justify-content: space-between;
+
+}
+
+
+
+
+
+
+.weather {
+    display: flex;
+    flex-flow: row nowrap;
+    /* border: 1px solid palegoldenrod; */
+    justify-content: left;
+    width: 98%;
+}
+
+.weather div {
+    width: 16%;
+    /* border: 1px solid pink; */
+} 
+
+.weather .today-weather{
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.today-weather div:first-child {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 40%;
+    
+}
+
+.today-weather div:last-child {
+    width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    font-size: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    border-right: 1px solid gray;
+
+}
+
+.today-weather div:last-child h5{
+    font-size: 26px;
+    margin: 0px 0 10px 0;
+}
+
+.today-weather div:last-child h5 b{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+
+
+.today-weather div:last-child p{
+    margin: 0;
+    }
+
+.today-weather img {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.today-weather h5,
+.today-weather p{
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+.today-weather div:last-child h5,
+.today-weather div:last-child p {
+    text-align: left;
+}
+
+.other-weather {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    
+}
+
+.other-weather div {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.other-weather div img{
+    width: 60%;
+}
+
+.weather-item:hover,
+.map-item:hover {
+    background-color: #fff;
+    cursor: pointer;
+} 
+
+.weather-item,
+.map-item {
+    width: 49.5%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #CCC;
+}
+
+.weather-map-h {
+    border-left: 3px solid #4BBC5E;
+    padding-left: 20px;
+    width: 80%;
+    max-width: 1200px;
+    margin: 80px auto 20px auto;
+    box-sizing: border-box;
+    font-size: 28px;
+
+}
+
+/* 變動css  點擊後 */
+.check{
+    background-color: #fff;
+    cursor: pointer;
+    border-bottom: 11px solid white;
+    margin-bottom: 0;
+    width: 50%;
+    font-size: 26px;
+    align-items:end
+}  
+
+.recommand {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-flow: wrap nowrap;
+    justify-content: space-around;
+}
+
+.recommand div {
+    width: 95%;
+}
