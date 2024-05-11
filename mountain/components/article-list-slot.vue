@@ -5,20 +5,20 @@
 <template>
     <div class="article-list-container">
       <div class="article-img">
-        <slot name="article-img" :class="img-s"></slot>
+        <slot name="article-img" class="img-s"></slot>
       </div>
       <div class="article-intro">
-        <nuxt-lin>
-          <h2>  <slot name="title"></slot>  </h2>
-        </nuxt-lin>
+        <nuxt-link>
+          <slot name="title"></slot>
+        </nuxt-link>
          
-        <h3 ><slot name="content"></slot></h3>
+        <div><slot name="content"></slot></div>
         <div class="contents">
-          <p class="who"><slot name="who"></slot> </p>
-          <p ><slot name="time"></slot> </p>
-          <p class="like"><font-awesome-icon :icon="['fas', 'heart']" class="icon" /> <slot name="like"></slot>人收藏</p>
-          <p class="see"><font-awesome-icon :icon="['fas', 'eye']" class="icon" /> <slot name="see"></slot>點閱</p>
-          <p class="readmore">閱讀更多...</p>
+          <div class="who"><slot name="who"></slot></div>
+          <div><slot name="time"></slot></div>
+          <div class="like"><font-awesome-icon :icon="['fas', 'heart']" class="icon" /> <slot name="like"></slot>人收藏</div>
+          <div class="see"><font-awesome-icon :icon="['fas', 'eye']" class="icon" /> <slot name="see"></slot>點閱</div>
+          <div class="readmore">閱讀更多...</div>
         </div>
       </div>
     </div>
