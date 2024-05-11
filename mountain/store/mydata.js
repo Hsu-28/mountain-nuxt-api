@@ -2,6 +2,7 @@ import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useDataStore = defineStore('counter', () =>{
+  const favoritesList = ref([])
   
   const mountainsData = ref([
     {
@@ -9,7 +10,7 @@ export const useDataStore = defineStore('counter', () =>{
     name: "玉山主峰",
     name2:"新高山∕摩里遜山",
     height:"3414 公尺",
-    image: "/images/img0.jpg",
+    image: "./images/img0.jpg",
     register: "要",
     locationID: "10",
     location:"南投縣信義鄉,嘉義縣阿里山鄉,高雄市桃源區",
@@ -250,6 +251,9 @@ export const useDataStore = defineStore('counter', () =>{
 
 
   ]);
+  const addToFavorites = (id) =>{
+    favoritesList.value.push(id)
+  }
 
-  return  { mountainsData ,articleData }
+  return  { mountainsData ,articleData, addToFavorites, favoritesList}
 })

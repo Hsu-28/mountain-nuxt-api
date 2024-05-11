@@ -10,9 +10,6 @@ const filteredMountains = computed(() => {
     return mountain.name.includes(searchQuery.value);
   });
 });
-
-
-
 </script>
 
 <template>
@@ -30,7 +27,7 @@ const filteredMountains = computed(() => {
   </section>
 
   <section class="main">
-    <h3>台灣百岳一覽 </h3>
+    <h3>台灣百岳一覽</h3>
     <div class="main-content">
       
         <MountainCard v-for="mountain in filteredMountains" :key="mountain.id" :message="mountain" />

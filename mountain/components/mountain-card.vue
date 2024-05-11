@@ -1,14 +1,15 @@
 <script setup>
 import { ref, defineProps } from 'vue';
-
+import { useDataStore } from '@/store/mydata'
+const addToFavorites = useDataStore().addToFavorites
+const favoritesList= useDataStore().favoritesList
 const props = defineProps({
     message: Object
 });
-
 const successStatus = ref(false);
 const isClicked = ref(false);
-
-const toggleColor = () => {
+const timer =''
+const toggleColor = (name) => {
     isClicked.value = !isClicked.value;
 
     if (isClicked.value) {
@@ -24,6 +25,9 @@ const toggleColor = () => {
     } else {
         successStatus.value = false;
     }
+    addToFavorites(name)
+    
+
 };
 
 const alreadyClimb = true
@@ -33,16 +37,16 @@ const alreadyClimb = true
 
 <template>
   <div>
-        <div class="cards">
+        <div class="cards" >
           <div class="finish" v-show="successStatus">恭喜攀登成功!!</div>
           <font-awesome-icon :icon="['fas', 'font-awesome']" class="heart"  
           :class="{ 'already' : isClicked }"
-          @click="toggleColor"
+          @click="toggleColor(100)"
           v-if="alreadyClimb"
           />
           
-        <!-- <nuxt-link :to="`/mountains/${message.id}`"> -->
         <nuxt-link :to="`/mountains/${message.id}`">
+        <!-- <nuxt-link :to="/mountains/message.id"> -->
         <div class="mount-img">
           <img :src="message.image" :alt="message.name">
           <div class="content-intro">

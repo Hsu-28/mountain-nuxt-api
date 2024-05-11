@@ -44,7 +44,7 @@
                     </a>
                 </span>
                 <span> 
-                  <nuxt-link to="/">
+                  <nuxt-link to="/mem">
                         <font-awesome-icon :icon="['fas', 'user']"  class="memlink"/>
                   </nuxt-link>
                 </span>
