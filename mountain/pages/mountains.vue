@@ -1,6 +1,11 @@
 <script setup lang="ts">
 
 import { ref } from 'vue'
+definePageMeta({
+  validate: async (route) => {
+    return true
+  }
+})
 const parentMessage = ref([
     {
     id: 0,
@@ -197,8 +202,7 @@ const parentMessage = ref([
     
 ]);
 
-
-
+const alreadyClimb = false
 
 const route = useRoute()
 console.log("地址",route.params.id)
@@ -279,7 +283,7 @@ const weatherImages = {
                 "晴午後短暫雷陣雨":"/images/weather/suntemth.svg",
                 "多雲午後短暫雷陣雨":"/images//weather/dsr.svg",
                 "多雲時陰短暫陣雨或雷雨":"/images/weather/darktemrainth.svg",
-            }
+}
 
 
 
@@ -323,7 +327,7 @@ while (randomMountainList.length < 3) {
             </div>
         </div>
     </div>
-    <div class="info">
+    <div class="mountainpage-info">
            <p>  {{parentMessage[i].content}}  </p> 
     </div>
   </section>
@@ -372,7 +376,7 @@ while (randomMountainList.length < 3) {
 
   <h2 class="weather-map-h">  山點推薦 </h2>
   <section class="recommand">
-        <MountainCard class="items" v-for="mountain in  randomMountainList" :key="mountain.id" :message="mountain" />
+        <MountainCard class="items" v-for="mountain in randomMountainList" :key="mountain.id" :message="mountain" />
   </section>
 </template>
 

@@ -40,6 +40,9 @@ nav > div{
     font-size: 16px;
     letter-spacing: 2px
 }
+.info{
+    display: none;
+}
 
 nav > div .logo{
 
@@ -52,7 +55,7 @@ nav > div > div:last-child {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    width: 14%;
+    width: 20%;
     font-size: 20px;
     margin-bottom: 18px;
    
@@ -71,6 +74,7 @@ nav > div > div:last-child a{
     width: 100%;
     height: 46vh;
     display: flex;
+    background-repeat: no-repeat;
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
 }
@@ -100,6 +104,7 @@ nav > div > div:last-child a{
 .banner > div h4 {
     margin: 10px 0;
     color: white;
+    text-shadow: 1px 1px 1px rgb(147, 149, 149)
 }
 
 .search {
@@ -166,6 +171,10 @@ nav > div > div:last-child a{
     overflow: hidden;
     border-radius: 14px;
 }
+
+.cards{
+    position: relative;
+}
 .cards img{
     width: 100%;
     transition: transform 1s;
@@ -182,8 +191,41 @@ nav > div > div:last-child a{
     margin-bottom: -30px;
 }
 
+.cards .heart{
+    color: rgba(255, 255, 255, 0.523);
+    position: absolute;
+    right: 6%;
+    top: 6%;
+    z-index: 2;
+    font-size: 24px;
+}
 
+.cards .heart:hover {
+    color: rgb(255, 255, 14);
+    cursor: pointer;
+}
 
+.cards .already {
+    color: rgb(255, 255, 14);
+    cursor: pointer;
+}
+
+.memlink {
+    color: #404040;
+}
+.finish {
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    transform: translate(0, 20%);
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.797);
+    z-index: 3;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    
+}
 .content-intro {
     position: absolute;
     bottom: 0px;
@@ -211,6 +253,7 @@ nav > div > div:last-child a{
 }
 
 footer {
+    margin-top: 20px;
     background-color: rgb(38, 125, 128);
 }
 
@@ -225,10 +268,142 @@ footer  > div{
 }
 
 
-
-@media screen and (max-width: 768px) {
-    .example {
-        width: 100%; /* 可以是任何你需要的宽度 */
-        padding: 10px; /* 可以是任何你需要的内边距 */
+@media (max-width:788px) {
+    .logo h1{
+        font-size: 22px;
     }
+    .logo h2{
+        margin-top: 1px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    nav > div{
+        width: 90%;
+    }
+    nav > div > div[data-v-938b83b0]:last-child{
+        width: 30%;
+    }
+    nav > div > div:last-child a{
+        font-size: 18px;
+    }
+    .nav > div > div:last-child {
+        width: 26% ; 
+    }
+    .main {
+        width: 96%;
+    }
+
+    .main h3{
+        font-size: 20px;
+    }
+    .main-content >  div {
+        width: 48%;
+    }
+    .content-intro {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+    }
+    .content-intro b{
+        font-size: 14px;
+    }
+    .location {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    footer  > div{
+        width: 75%; 
+        font-size: 14px;
+    }
+
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 14px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 16px;
+    }
+    .banner {
+        background-image: url(/_nuxt/assets/images/indexbanner.jpg);
+        background-size: cover;
+        background-position: center; 
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 12px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 396px) {
+    .main-content{
+        width: 90%; 
+        flex-flow:column nowrap;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+    }
+    .main-content > div {
+        width: 90%;
+    }
+    .main h3{
+        text-align: center;
+        font-size: 18px;
+    }
+    .logo h1{
+        font-size: 18px;
+    }
+    .logo h2{
+        margin-top: 1px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 12px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 16px;
+    }
+    .banner {
+        background-size: cover;
+        background-position: center; 
+        width: 120%;
+    }
+    footer  > div{
+        width: 75%; 
+
+        font-size: 12px;
+    }
+    nav > div{
+        width: 90%;
+        margin: auto
+    }
+    .info {
+        display: block;
+        position: absolute;
+        top: 36px;
+        font-size: 16px;
+        /* right: 60px; */
+    } 
+    .memlink {
+        position: absolute;
+        top: 34px;
+    } 
+
+    .info-text {
+        display: none;
+    }
+    
 }

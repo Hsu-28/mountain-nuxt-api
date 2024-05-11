@@ -199,5 +199,59 @@ export const useDataStore = defineStore('counter', () =>{
     
   ]);
 
-  return  { mountainsData }
+
+  const articleData = ref([
+  {
+    id: 3,
+    title: "【暑期活動】森林裡的夏日學習：到大自然裡放暑假",
+    content:" 想讓孩子在森林裡獨立生活，打開好奇心，與夥伴們共同學習，與大自然交朋友嗎？林業及自然保育署新竹分署所屬的東眼山自然教育中心，於今年7、8月，精心規...",
+    who:"自然保育署",
+    time:"2024/05/01",
+    like:"0",
+    see:"2,526",
+    img:"/images/article/article4.png",
+  },{
+    id: 4,
+    title: "【新聞】心材腐朽竟逾半！玉山塔塔加900歲大鐵杉病了",
+    content:"2024-04-2920:13聯合報／記者賴香珊／南投即時報導玉山塔塔加大鐵杉樹齡約900歲，是當地必訪景點，更是珍貴文化資產，也是不少國人共通的記憶。但",
+    time:"2024/05/03",
+    who:"udn聯合新聞網",
+    like:"0",
+    img:"/images/article/article5.png",
+    see:"1,6226"
+  },
+    
+    {
+      id: 1,
+      title: "【新聞】日本外來種山羌大量繁殖跨縣界 茨城縣下達獵捕令",
+      content:"聯合報／記者雷光涵／即時報導日本千葉縣南部的特定外來種生物山羌大量繁殖，是3年前的3.7倍，農業損失及深夜大聲嚎叫，皆令居...",
+      who:"udn聯合新聞網",
+      time:"2024/05/03",
+      img:"/images/article/article2.png",
+      like:"0",
+      see:"1,226"
+    },{
+      id: 0,
+      title: "【生態】大雪山地區驚喜發現 臺灣黑熊樹上熊窩影像曝光",
+      content:"大雪山地區是臺灣黑熊活動及生存的重要棲地，近日林業及自然保育署臺中分署進行自主研究監測時，於一棵青剛櫟樹上發現疑似臺灣黑熊的熊窩，該分署森林護管員透過攀樹...",
+      who:"自然保育署",
+      time:"2024/05/07",
+      like:"0",
+      img:"/images/article/article1.png",
+      see:"1,226"},
+    {
+      id: 2,
+      title: "【新聞】日本外來種山羌大量繁殖跨縣界 茨城縣下達獵捕令",
+      content:"聯合報／記者雷光涵／即時報導日本千葉縣南部的特定外來種生物山羌大量繁殖，是3年前的3.7倍，農業損失及深夜大聲嚎叫，皆令居...",
+      who:"udn聯合新聞網",
+      time:"2024/05/03",
+      like:"0",
+      img:"/images/article/article3.png",
+      see:"1,226"
+    }
+
+
+  ]);
+
+  return  { mountainsData ,articleData }
 })

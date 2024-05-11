@@ -1,15 +1,47 @@
 <script setup>
-// import { defineProps } from 'vue';
+import { ref, defineProps } from 'vue';
 
 const props = defineProps({
     message: Object
 });
+
+const successStatus = ref(false);
+const isClicked = ref(false);
+
+const toggleColor = () => {
+    isClicked.value = !isClicked.value;
+
+    if (isClicked.value) {
+        if (!successStatus.value) {
+            successStatus.value = true;
+            timer = setTimeout(() => {
+                successStatus.value = false;
+            }, 1500);
+        } else {
+            clearTimeout(timer);
+            successStatus.value = false;
+        }
+    } else {
+        successStatus.value = false;
+    }
+};
+
+const alreadyClimb = true
+
 </script>
+
 
 <template>
   <div>
-    <!-- <nuxt-link :to="`/mountains/${1}`"> -->
         <div class="cards">
+          <div class="finish" v-show="successStatus">恭喜攀登成功!!</div>
+          <font-awesome-icon :icon="['fas', 'font-awesome']" class="heart"  
+          :class="{ 'already' : isClicked }"
+          @click="toggleColor"
+          v-if="alreadyClimb"
+          />
+          
+        <!-- <nuxt-link :to="`/mountains/${message.id}`"> -->
         <nuxt-link :to="`/mountains/${message.id}`">
         <div class="mount-img">
           <img :src="message.image" :alt="message.name">

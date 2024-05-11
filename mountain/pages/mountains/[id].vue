@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { useRoute } from 'vue';
-
 const route = useRoute();
 const id = route.params.id;
 

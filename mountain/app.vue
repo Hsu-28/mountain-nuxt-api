@@ -35,14 +35,18 @@
             </a>
             <div>
                 <span>
-                    <a href="">
+                    <a href="/news">
+                      <font-awesome-icon :icon="['fas', 'circle-info']" class="info" />
+                    </a>
+                    
+                    <a href="/news" class="info-text" >
                         山岳報告亭
                     </a>
                 </span>
                 <span> 
-                    <a href="">
-                        <font-awesome-icon :icon="['fas', 'user']" />
-                    </a>
+                  <nuxt-link to="/">
+                        <font-awesome-icon :icon="['fas', 'user']"  class="memlink"/>
+                  </nuxt-link>
                 </span>
             </div>
 
@@ -67,7 +71,7 @@
     </footer>
 </template>
 
-<style>
+<style scoped>
 @import url('assets/css/reset.css');
 @import url('assets/css/index.css');
 </style>
