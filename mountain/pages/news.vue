@@ -4,14 +4,8 @@ import { useDataStore } from '@/store/mydata'
 const articleData = useDataStore().articleData
 import articleSlot from '@/components/article-list-slot.vue'
 
-
-
 </script>
 <template>
-
-    <section> 
-
-    </section>
     <div class="page-title">
         <h1> 文章列表  </h1> <p> 15,084 筆文章資料 </p>
     </div>

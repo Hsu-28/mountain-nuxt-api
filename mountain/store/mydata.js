@@ -198,8 +198,6 @@ export const useDataStore = defineStore('counter', () =>{
     }
     
   ]);
-
-
   const articleData = ref([
   {
     id: 3,
