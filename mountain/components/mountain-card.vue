@@ -8,7 +8,7 @@ const props = defineProps({
 });
 const successStatus = ref(false);
 const isClicked = ref(false);
-const timer =''
+let timer = ''
 const toggleColor = (name) => {
     isClicked.value = !isClicked.value;
 
