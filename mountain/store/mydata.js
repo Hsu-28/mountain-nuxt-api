@@ -3,18 +3,6 @@ import { defineStore } from 'pinia';
 
 export const useDataStore = defineStore('counter', () =>{
   const favoritesList = ref([
-    // {
-    // id: 0,
-    // name: "玉山主峰",
-    // name2:"新高山∕摩里遜山",
-    // height:"3414 公尺",
-    // image: "./images/img0.jpg",
-    // register: "要",
-    // locationID: "10",
-    // location:"南投縣信義鄉,嘉義縣阿里山鄉,高雄市桃源區",
-    // map:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14638.942302878684!2d120.94695814436521!3d23.470000744390887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346f210e420ba6d1%3A0x83cb1aa521840d7e!2z546J5bGx!5e0!3m2!1szh-TW!2stw!4v1715148216402!5m2!1szh-TW!2stw",
-    // content: "玉山主峰位於台灣的中心位置，海拔3952公尺，為台灣群山之首，百岳排名第一，也是東北亞的最高峰。主峰四周有東、南、西、北峰環繞，外圍還有前峰、小南山、南玉山、東小南山、鹿山與北北峰遙相呼應，宛如眾星拱月般，襯托出主峰的王者之尊，壯偉雄奇的山容、絕佳的展望和絢麗的日出景觀，吸引了無數的中外登山客前來攀登，近年來更成為台灣人一生必須完成的三件事之一。"
-    // }
   ])
   
   const mountainsData = ref([

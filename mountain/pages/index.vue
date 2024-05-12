@@ -1,17 +1,33 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useDataStore } from '@/store/mydata'
 
-const mountainsData = useDataStore()
-const addToFavorites= useDataStore().addToFavorites
-const favoritesList= useDataStore().favoritesList
-const alreadyClimb = false
+
+interface mountainsData {
+  id: number;
+  name: string;
+  name2: string;
+  height: string;
+  image: string;
+  register: string;
+  locationID: string;
+  location: string;
+  map: string;
+  content: string;
+  isEditing?: boolean; 
+}
+
+const mountainsData:mountainsData[] = useDataStore().mountainsData
+const addToFavorites: (item: mountainsData) => void = useDataStore().addToFavorites;
+const favoritesList:mountainsData[]= useDataStore().favoritesList
+const alreadyClimb:boolean = false
 const searchQuery = ref('');
 const filteredMountains = computed(() => {
-  return mountainsData.mountainsData.filter(mountain => {
+  return mountainsData.filter(mountain => {
     return mountain.name.includes(searchQuery.value);
   });
 });
+console.log(searchQuery )
 </script>
 
 <template>

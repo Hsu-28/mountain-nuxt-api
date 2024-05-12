@@ -1,7 +1,22 @@
 <script setup lang="ts">
-
 import { ref } from 'vue'
-const parentMessage = ref([
+// import  mountaincardsmell from '/components/mountain-card-small.vue'
+
+interface mountainsData {
+  id: number;
+  name: string;
+  name2: string;
+  height: string;
+  image: string;
+  register: string;
+  locationID: string;
+  location: string;
+  map: string;
+  content: string;
+  isEditing?: boolean; 
+}
+
+const parentMessage: Ref<mountainsData[]> = ref([
     {
     id: 0,
     name: "玉山主峰",
@@ -197,26 +212,25 @@ const parentMessage = ref([
     
 ]);
 
-const alreadyClimb = false
 
 const route = useRoute()
-console.log("地址",route.params.id)
+// console.log("地址",route.params.id)
 const i = route.params.id
 
 // 切換 天氣與地圖
-const showweather = ref(true)
+const showweather = ref<boolean>(true)
 const showWeatherF = () => {
-    console.log("Clicked on showMapF");
-      showweather.value = true 
+      showweather.value = true // 
     };
-
 const showMapF = () => {
-    console.log("Clicked on showMapF");
     showweather.value = false 
 };
 
 // 取得位置
-const location = parentMessage.value[i].locationID
+// const location = parentMessage.value[i].locationID
+for (let i = 0; i < parentMessage.value.length; i++) {
+  const location = parentMessage.value[i].locationID;
+}
 
 // 介接api
 const { data: count } = await useFetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWA-964BE4A8-7D45-45A4-9304-CEE23BA30FF3&format=JSON&locationName=&elementName=')
@@ -238,7 +252,12 @@ const purpleLightLevel = weatherInfo.weatherElement[9].time[0].elementValue[1].v
 const todayWeather = weatherInfo.weatherElement[6].time[0].elementValue[0].value
 const todayAverTem = weatherInfo.weatherElement[1].time[0].elementValue[0].value
 
-const otherDayWeather = {};
+interface otherDayWeatherFace {
+    date: number | string,
+    weatherShow: number | string,
+    rainRate: number | string,
+}
+const otherDayWeather: otherDayWeatherFace[] = [];
 
 for (let i = 0; i < 5; i++) {
     const weatherShow = count._rawValue.records.locations[0].location[10].weatherElement[6].time[3 + i * 2].elementValue[0].value;
@@ -276,21 +295,22 @@ const weatherImages = {
                 "陰時多雲短暫陣雨或雷雨":"/images/weather/shawdowRainTh.svg",
                 "陰短暫陣雨或雷雨":"/images/weather/cloudtemrain.svg",
                 "晴午後短暫雷陣雨":"/images/weather/suntemth.svg",
-                "多雲午後短暫雷陣雨":"/images//weather/dsr.svg",
+                "多雲午後短暫雷陣雨":"/images/weather/dsr.svg",
                 "多雲時陰短暫陣雨或雷雨":"/images/weather/darktemrainth.svg",
 }
 
 
+let alreadyClimb = false
 
 
 
-const randomMountainList = [];
 const usedIndexes = new Set();
+const randomMountainList: Ref<mountainsData[]> = ref([]);
 
-while (randomMountainList.length < 3) {
+while (randomMountainList.value.length < 3) {
     const randomIndex = Math.floor(Math.random() * parentMessage.value.length);
     if (!usedIndexes.has(randomIndex)) {
-        randomMountainList.push(parentMessage.value[randomIndex]);
+        randomMountainList.value.push(parentMessage.value[randomIndex] );
         usedIndexes.add(randomIndex);
     }
 }

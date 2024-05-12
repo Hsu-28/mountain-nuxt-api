@@ -1,15 +1,28 @@
-<script setup>
+<script setup lang="ts">
 import { ref, defineProps } from 'vue';
 import { useDataStore } from '@/store/mydata'
-const addToFavorites = useDataStore().addToFavorites
-const favoritesList= useDataStore().favoritesList
+interface FavoriteItem {
+  id: number;
+  name: string;
+  name2: string;
+  height: string;
+  image: string;
+  register: string;
+  locationID: string;
+  location: string;
+  map: string;
+  content: string;
+  isEditing?: boolean; 
+}
+const favoritesList:FavoriteItem[] = useDataStore().favoritesList;
+const addToFavorites: (item: FavoriteItem) => void = useDataStore().addToFavorites;
 const props = defineProps({
     message: Object
 });
-const successStatus = ref(false);
-const isClicked = ref(false);
-let timer = ''
-const toggleColor = (name) => {
+const successStatus = ref<boolean>(false);
+const isClicked = ref<boolean>(false);
+let timer:NodeJS.Timeout
+const toggleColor = (name:FavoriteItem) => {
     isClicked.value = !isClicked.value;
 
     if (isClicked.value) {
@@ -26,8 +39,6 @@ const toggleColor = (name) => {
         successStatus.value = false;
     }
     addToFavorites(name)
-    
-
 };
 
 let alreadyClimb = true

@@ -1,13 +1,26 @@
-<script setup>
+<script setup lang="ts">
 import { useDataStore } from '@/store/mydata'
 import { ref } from 'vue';
 
-const favoritesList = useDataStore().favoritesList;
-const addToFavorites = useDataStore().addToFavorites;
-console.log(favoritesList);
-const climedbMountains = favoritesList.length;
+interface FavoriteItem {
+  id: number;
+  name: string;
+  name2: string;
+  height: string;
+  image: string;
+  register: string;
+  locationID: string;
+  location: string;
+  map: string;
+  content: string;
+  isEditing?: boolean; 
+}
 
-const toggleEditing = (index) => {
+const favoritesList:FavoriteItem[] = useDataStore().favoritesList;
+const addToFavorites: (item: FavoriteItem) => void = useDataStore().addToFavorites;
+const climedbMountains:number = favoritesList.length;
+
+const toggleEditing = (index:number) => {
   favoritesList.forEach((mountain, i) => {
     if (i === index) {
       mountain.isEditing = !mountain.isEditing;
@@ -17,7 +30,7 @@ const toggleEditing = (index) => {
   });
 };
 
-const confirm = (index) => {
+const confirm = (index:number) => {
   favoritesList[index].isEditing = false;
 };
 </script>
