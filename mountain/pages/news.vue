@@ -15,22 +15,22 @@ import articleSlot from '@/components/article-list-slot.vue'
             <img :src="item.img" alt="" width="100%"  >
         </template>
         <template #title>
-            <h2> {{item.title}} </h2>
+            <div> {{item.title}} </div>
         </template> 
         <template #content>
-            <h2> {{item.content}}  </h2>
+            <div> {{item.content}}  </div>
         </template> 
         <template #who>
-            <h2> {{item.who}}  </h2>
+            <div> {{item.who}}  </div>
         </template> 
         <template #time>
-            <h2> {{item.time}}  </h2>
+            <div> {{item.time}}  </div>
         </template> 
         <template #like>
-            <h2> {{item.like}}  </h2>
+            <div> {{item.like}}  </div>
         </template> 
         <template #see>
-            <h2> {{item.see}}  </h2>
+            <div> {{item.see}}  </div>
         </template> 
         
      </articleSlot>
@@ -45,7 +45,7 @@ import articleSlot from '@/components/article-list-slot.vue'
     margin: auto;
 }
 
- .article-list-containe:hover h2{
+ .article-list-containe:hover div{
   color: green;
 }
 

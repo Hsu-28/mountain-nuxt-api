@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 import { ref } from 'vue'
 const parentMessage = ref([
     {
@@ -197,10 +196,9 @@ const parentMessage = ref([
     
 ]);
 
-const alreadyClimb = false
 
 const route = useRoute()
-console.log("地址",route.params.id)
+// console.log("地址",route.params.id)
 const i = route.params.id
 
 // 切換 天氣與地圖
@@ -216,7 +214,12 @@ const showMapF = () => {
 };
 
 // 取得位置
-const location = parentMessage.value[i].locationID
+// const location = parentMessage.value[i].locationID
+for (let i = 0; i < parentMessage.value.length; i++) {
+  const location = parentMessage.value[i].locationID;
+  // 使用 location 变量进行其他操作
+}
+
 
 // 介接api
 const { data: count } = await useFetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWA-964BE4A8-7D45-45A4-9304-CEE23BA30FF3&format=JSON&locationName=&elementName=')
@@ -281,16 +284,16 @@ const weatherImages = {
 }
 
 
+let alreadyClimb = false
 
 
-
-const randomMountainList = [];
+const randomMountainList = ref([]);
 const usedIndexes = new Set();
 
-while (randomMountainList.length < 3) {
+while (randomMountainList.value.length < 3) {
     const randomIndex = Math.floor(Math.random() * parentMessage.value.length);
     if (!usedIndexes.has(randomIndex)) {
-        randomMountainList.push(parentMessage.value[randomIndex]);
+        randomMountainList.value.push(parentMessage.value[randomIndex]);
         usedIndexes.add(randomIndex);
     }
 }
@@ -300,7 +303,7 @@ while (randomMountainList.length < 3) {
 <template>
 
   <section class="main-intro">
-    <h3>{{parentMessage[i].name}}</h3>
+    <h3>{{parentMessage[i].name}} </h3>
     <div class="content">
         <div class="content-img"><img :src="parentMessage[i].image" alt=""></div>
         <div class="content-p">

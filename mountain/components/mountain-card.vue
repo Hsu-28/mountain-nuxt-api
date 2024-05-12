@@ -30,7 +30,7 @@ const toggleColor = (name) => {
 
 };
 
-const alreadyClimb = true
+let alreadyClimb = true
 
 </script>
 
@@ -41,7 +41,7 @@ const alreadyClimb = true
           <div class="finish" v-show="successStatus">恭喜攀登成功!!</div>
           <font-awesome-icon :icon="['fas', 'font-awesome']" class="heart"  
           :class="{ 'already' : isClicked }"
-          @click="toggleColor(100)"
+          @click="toggleColor(message)"
           v-if="alreadyClimb"
           />
           

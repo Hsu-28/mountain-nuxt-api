@@ -3,7 +3,9 @@ import { ref, computed } from 'vue';
 import { useDataStore } from '@/store/mydata'
 
 const mountainsData = useDataStore()
-
+const addToFavorites= useDataStore().addToFavorites
+const favoritesList= useDataStore().favoritesList
+const alreadyClimb = false
 const searchQuery = ref('');
 const filteredMountains = computed(() => {
   return mountainsData.mountainsData.filter(mountain => {
@@ -15,7 +17,7 @@ const filteredMountains = computed(() => {
 <template>
   <section class="banner">
     <div>
-      <h3>遠離城市的喧囂，與群山一同舞蹈</h3>
+      <h3>遠離城市的喧囂，與群山一同舞蹈  </h3>
       <h4>山脈是自然的詩篇，每座山峰都是動人的詩句</h4>
       <div class="search">
         <input type="text" id="search-input" placeholder="輸入山脈查詢" v-model="searchQuery">

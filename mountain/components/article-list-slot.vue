@@ -9,16 +9,17 @@
       </div>
       <div class="article-intro">
         <nuxt-link>
-          <slot name="title"></slot>
+          
+         <div class="slot-title"> <slot name="title"></slot> </div> 
         </nuxt-link>
          
-        <div><slot name="content"></slot></div>
-        <div class="contents">
-          <div class="who"><slot name="who"></slot></div>
-          <div><slot name="time"></slot></div>
-          <div class="like"><font-awesome-icon :icon="['fas', 'heart']" class="icon" /> <slot name="like"></slot>人收藏</div>
-          <div class="see"><font-awesome-icon :icon="['fas', 'eye']" class="icon" /> <slot name="see"></slot>點閱</div>
-          <div class="readmore">閱讀更多...</div>
+        <div class="slot-h3"><slot name="content"></slot></div>
+        <div  class="contents">
+          <div  class="who slot-p"><slot name="who"></slot></div>
+          <div class="slot-p" ><slot name="time"></slot></div>
+          <div  class="like slot-p"><font-awesome-icon :icon="['fas', 'heart']" class="icon" /> <slot name="like"></slot>人收藏</div>
+          <div  class="see slot-p"><font-awesome-icon :icon="['fas', 'eye']" class="icon" /> <slot name="see"></slot>點閱</div>
+          <div  class="readmore">閱讀更多...</div>
         </div>
       </div>
     </div>
@@ -42,8 +43,8 @@
 
 .article-list-container .article-img {
   /* width: 30%; */
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
     aspect-ratio: 1 / 1; 
 }
 
@@ -55,14 +56,13 @@
 
 .article-list-container .article-intro {
     width: 78%;
-
     overflow: hidden; 
     display: flex;
     flex-flow: column nowrap;
 
 }
 
-.article-list-container h2 {
+.article-list-container .slot-title {
     font-size: 26px;
     margin: 16px;
     margin-left: 0px;
@@ -70,25 +70,31 @@
     overflow: hidden; 
 }
 
-.article-list-container h3 {
+.article-list-container .slot-h3 {
     font-size: 20px;
     width: 90%; 
     overflow: hidden;   
-    margin: 16px;
+    /* margin: 16px; */
 }
 
-.article-list-container div {
+.article-list-container div{
     display: flex;
     flex-flow: row nowrap;
     margin: 16px;
 }
 
-.article-list-container div p {
+.article-list-container div.contents{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 0px;
+}
+
+.article-list-container div .slot-p {
     display: flex;  
     margin-right: 16px;
 }
 
-.article-list-container div p .icon {
+.article-list-container div .slot-p .icon {
     color: gray;
     font-size: 14px;
     margin-right: 5px;
@@ -105,14 +111,14 @@
   .article-list-container{
     width: 90%;
   }
-  .article-list-container h2,
-  .article-list-container h3{
+  .article-list-container .slot-title,
+  .article-list-container .slot-h3{
     margin: 8px;
   }
-  .article-list-container h2{
+  .article-list-container .slot-title{
     font-size: 18px;
   }
-  .article-list-container h3 {
+  .article-list-container .slot-h3 {
     font-size: 16px;
     .article-list-container div{
       margin: 10px;
@@ -120,14 +126,17 @@
   }
   .article-list-container .article-img {
 
-    width: 200px;
+    width: 300px;
     height: 200px;
+  }
+  .article-list-container div[data-v-f57fc118]{
+    margin: 8px;
   }
 }
 
 @media (max-width:790px) {
-  .article-list-container .like,
-  .article-list-container .see {
+  .article-list-container div .like,
+  .article-list-container div .see {
     display: none;
   }
 }
@@ -139,16 +148,16 @@
     width: 50%;
   }
 
-  .article-list-container .like,
-  .article-list-container .see,
-  .article-list-container .who {
+  .article-list-container div .like,
+  .article-list-container div .see,
+  .article-list-container div .who {
     display: none;
   }
 
-  .article-list-container h2{
+  .article-list-container .slot-title{
     font-size: 16px;
   }
-  .article-list-container h3{
+  .article-list-container .slot-h3{
     max-height: 110px;
     font-size: 16px;
   }

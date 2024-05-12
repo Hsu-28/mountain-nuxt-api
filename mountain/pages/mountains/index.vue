@@ -207,7 +207,7 @@ const i = route.params.id
 const showweather = ref(true)
 const showWeatherF = () => {
     console.log("Clicked on showMapF");
-      showweather.value = true // 
+      showweather.value = true 
     };
 
 const showMapF = () => {
