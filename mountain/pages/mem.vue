@@ -28,7 +28,7 @@ const confirm = (index) => {
       <h1> 歡迎來到你的山屋</h1>
       <section>
         <h2 v-if="climedbMountains != 0">恭喜你 ! 你已經攀登了 &nbsp; {{climedbMountains}} &nbsp; 座高山！</h2>
-        <h2 v-if="climedbMountains === 0">目前還沒有攀登成功的紀錄唷</h2>
+        <h2 v-if="climedbMountains === 0" class="noclimb-title">目前還沒有攀登成功的紀錄唷</h2>
         <div class="climbs">
           <h3 v-if="climedbMountains != 0">
             很高興你能享受自然的美，飽覽群峰的美景，接下來有打算去哪一座山頭嗎? <br> 計劃下一次旅程之前不訪看一下之前的已經攀登的山岳紀錄吧
@@ -175,6 +175,21 @@ button{
     }
     button[data-v-f7e9b573]{
         bottom: 10px;
+    }
+    .noclimb[data-v-f7e9b573]{
+      height: 100%;
+      width: 100%;
+    }
+    .noclimb-title{
+      margin:0 ;
+      line-height: 1.4;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+  h1{
+      text-align: center;
     }
 }
 </style>

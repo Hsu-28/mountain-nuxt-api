@@ -9,6 +9,10 @@ module.exports = {
         { src: 'https://kit.fontawesome.com/8bfd57d05d.js' },
         // { src: 'C:/Users/svm3g/Documents/mountain-nuxt-api/mountain/store/mountain.js' },
 
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon2.ico' },
+      // 其他大小和格式的 favicon 圖示
     ]
   },
   plugins: [
