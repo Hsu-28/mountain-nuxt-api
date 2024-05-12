@@ -163,6 +163,7 @@ button{
     .climbs-item[data-v-f7e9b573]{
         flex-flow: column nowrap;
         width: 100%;
+        margin-top: 20px;
     }
     .items[data-v-f7e9b573],
     .climb-content[data-v-f7e9b573]{
@@ -196,6 +197,17 @@ button{
     }
     .climb-content[data-v-a0fc9ce8]{
       width: 100%;
+      margin-top: 20px;
+    }
+    .climb-content div{
+      margin-top: 20px;
+    }
+ 
+    .items:nth-child(1){
+        display:flex;
+    }
+    .cards{
+      margin-top: 20px;
     }
 }
 </style>
