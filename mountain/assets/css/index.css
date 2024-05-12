@@ -68,7 +68,7 @@ nav > div > div:last-child a{
 
 
 .banner {
-    background-image: url('@request/images/indexbanner.jpg');
+    background-image: url('~static/images/indexbanner.jpg');
     background-size: cover; 
     background-position: 0 -120px; 
     width: 100%;
