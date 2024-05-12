@@ -110,7 +110,6 @@ h3{
     border-bottom: 1px solid gray;
     display: flex;
     flex-flow: row nowrap;
-    margin:10px
 }
 .items {
     width: 50%;
@@ -163,6 +162,7 @@ button{
     }
     .climbs-item[data-v-f7e9b573]{
         flex-flow: column nowrap;
+        width: 100%;
     }
     .items[data-v-f7e9b573],
     .climb-content[data-v-f7e9b573]{
@@ -190,6 +190,12 @@ button{
 @media screen and (max-width: 414px) {
   h1{
       text-align: center;
+    }
+    .climbs[data-v-a0fc9ce8]{
+      width: 100%;
+    }
+    .climb-content[data-v-a0fc9ce8]{
+      width: 100%;
     }
 }
 </style>
