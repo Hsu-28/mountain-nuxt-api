@@ -38,15 +38,7 @@ let alreadyClimb = true
 <template>
   <div>
         <div class="cards" >
-          <div class="finish" v-show="successStatus">恭喜攀登成功!!</div>
-          <font-awesome-icon :icon="['fas', 'font-awesome']" class="heart"  
-          :class="{ 'already' : isClicked }"
-          @click="toggleColor(message)"
-          v-if="alreadyClimb"
-          />
-          
         <nuxt-link :to="`/mountains/${message.id}`">
-        <!-- <nuxt-link :to="/mountains/message.id"> -->
         <div class="mount-img">
           <img :src="message.image" :alt="message.name">
           <div class="content-intro">
