@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import  mountaincardsmell from '/components/mountain-card-small.vue'
 const parentMessage = ref([
     {
     id: 0,
@@ -375,11 +376,22 @@ while (randomMountainList.value.length < 3) {
   <h2 class="weather-map-h">  山點推薦 </h2>
   <section class="recommand">
     <ClientOnly>
-        <MountainCard class="items" v-for="mountain in randomMountainList" :key="mountain.id" :message="mountain" />
+        <!-- <MountainCard class="items" v-for="mountain in randomMountainList" :key="mountain.id" :message="mountain" /> -->
+        <mountain-card-small class="items" v-for="mountain in randomMountainList" :key="mountain.id" :message="mountain" > 
+        </mountain-card-small>
     </ClientOnly>
   </section>
 </template>
 
 <style>
 @import url('assets/css/mountains.css');
+
+@media (max-width:768px) {
+    .items:nth-child(2){
+        display: none;
+    }}
+@media (max-width:414px) {
+    .items:nth-child(1){
+        display: none;
+    }}
 </style>

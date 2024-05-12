@@ -1,13 +1,14 @@
 <script setup>
-
 import { useDataStore } from '@/store/mydata'
-const articleData = useDataStore().articleData
 import articleSlot from '@/components/article-list-slot.vue'
+
+const articleData = useDataStore().articleData
+
 
 </script>
 <template>
     <div class="page-title">
-        <h1> 文章列表  </h1> <p> 15,084 筆文章資料 </p>
+        <h1> 文章列表  </h1> <p> {{articleData.length }}  筆文章資料 </p>
     </div>
     
     <articleSlot v-for="item in articleData" >
@@ -51,14 +52,14 @@ import articleSlot from '@/components/article-list-slot.vue'
 
 .page-title {
     display: flex;
-    margin: 50px auto;
+    margin: 40px auto;
     padding: auto;
     width: 76%;
     max-width: 1200px;
 }
 
 .page-title h1{
-    font-size: 28px;
+    font-size: 26px;
 }
 .page-title p{
     font-size: 20px;
@@ -69,7 +70,7 @@ import articleSlot from '@/components/article-list-slot.vue'
 
 @media (max-width:1024px) {
     .page-title {
-    margin: 26px auto;
+    margin: 22px auto;
     width: 90%;
 }
 /* .page-title h1{

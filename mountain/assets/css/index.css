@@ -127,7 +127,6 @@ nav > div > div:last-child a{
 }
 
 .search-btn {
-    /* border: 1px solid blue; */
     width: 60px;
     height: 40px;
     flex-shrink: 0;
@@ -210,8 +209,8 @@ nav > div > div:last-child a{
     cursor: pointer;
 }
 
-.memlink {
-    color: #404040;
+.memlink,.info {
+    color: #292929;
 }
 .finish {
     position: absolute;

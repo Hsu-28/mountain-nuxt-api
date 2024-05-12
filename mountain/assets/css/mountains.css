@@ -299,7 +299,11 @@
     }
     .content{
         flex-flow: column nowrap;
-        width: 200%;
+        width: 100%;
+    }
+    .content > div {
+        width: 100%;
+        margin-bottom: 10px;
     }
     .title{
         height: 40px;

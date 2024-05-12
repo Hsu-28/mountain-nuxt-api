@@ -38,6 +38,12 @@ let alreadyClimb = true
 <template>
   <div>
         <div class="cards" >
+          <div class="finish" v-show="successStatus">恭喜攀登成功!!</div>
+          <font-awesome-icon :icon="['fas', 'font-awesome']" class="heart"  
+          :class="{ 'already' : isClicked }"
+          @click="toggleColor(message)"
+          v-if="alreadyClimb"
+          />
         <nuxt-link :to="`/mountains/${message.id}`">
         <div class="mount-img">
           <img :src="message.image" :alt="message.name">
@@ -55,5 +61,390 @@ let alreadyClimb = true
 
 <style>
 @import url('assets/css/reset.css');
-@import url('assets/css/index.css');
+
+nav{
+    height: 80px;
+    width: 100%;
+    border-top: 4px solid rgba(12, 166, 38, 0.736);
+    background-color: #fff;
+}
+
+nav > div{
+    margin: auto;
+    padding: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 76%;
+    max-width: 1200px;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+.logo {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    color: var(--font-black);
+    text-decoration: none;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+.logo h1{
+    font-size: 30px;
+    letter-spacing: 6px
+}
+.logo h1 i{
+    margin-left: 10px;
+}
+.logo h2{
+    margin-top: 4px;
+    font-size: 16px;
+    letter-spacing: 2px
+}
+.info{
+    display: none;
+}
+
+nav > div .logo{
+
+    /* border: 1px solid blue; */
+    padding:  auto;
+}
+
+nav > div > div:last-child {
+    margin: auto 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    width: 20%;
+    font-size: 20px;
+    margin-bottom: 18px;
+   
+}
+
+nav > div > div:last-child a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.banner {
+    background-image: url('/assets/images/indexbanner.jpg'); 
+    background-size: cover; 
+    background-position: 0 -120px; 
+    width: 100%;
+    height: 46vh;
+    display: flex;
+    background-repeat: no-repeat;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.banner > div {
+    width: 76%;
+    height: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center; /* 水平居中 */
+    align-items: start; /* 垂直居中 */
+    margin: auto;
+}
+
+.banner > div h3 {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.banner > div h4 {
+    font-size: 16px;
+}
+
+
+.banner > div h3,
+.banner > div h4 {
+    margin: 10px 0;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(147, 149, 149)
+}
+
+.search {
+    display: flex;
+}
+.search input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 20px 0px #ABC;
+    font-family: Noto Sans TC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 13.3px;
+}
+
+.search-btn {
+    width: 60px;
+    height: 40px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(199, 199, 199);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+.main {
+    width: 76%;
+    margin: auto;
+    
+}
+
+.main h3 {
+    font-size: 24px;
+    margin: 30px 0px;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.main-content >  div {
+    width: 32%;
+    margin-bottom: 20px;
+    /* background-color: pink; */
+}
+
+.mount-img {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.cards{
+    position: relative;
+}
+.cards img{
+    width: 100%;
+    transition: transform 1s;
+}
+
+    
+.cards .name {
+    z-index: 2;
+    height: 30px;
+    margin-bottom: -30px;
+}
+
+
+.memlink,.info {
+    color: #292929;
+}
+.finish {
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    transform: translate(0, 20%);
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.797);
+    z-index: 3;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    
+}
+.content-intro {
+    position: absolute;
+    bottom: 0px;
+    color: var(--font-white);
+    width: calc(100% - 10px);
+    height: 30%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--font-white);
+}
+.content-intro b{
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--font-white);
+    color: white;
+}
+
+.location {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: rgb(38, 125, 128);
+}
+
+footer  > div{
+    width: 75%; 
+    height: 50px;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width:788px) {
+    .logo h1{
+        font-size: 22px;
+    }
+    .logo h2{
+        margin-top: 1px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    nav > div{
+        width: 90%;
+    }
+    nav > div > div[data-v-938b83b0]:last-child{
+        width: 30%;
+    }
+    nav > div > div:last-child a{
+        font-size: 18px;
+    }
+    .nav > div > div:last-child {
+        width: 26% ; 
+    }
+    .main {
+        width: 96%;
+    }
+
+    .main h3{
+        font-size: 20px;
+    }
+    .main-content >  div {
+        width: 48%;
+    }
+    .content-intro {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+    }
+    .content-intro b{
+        font-size: 14px;
+    }
+    .location {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    footer  > div{
+        width: 75%; 
+        font-size: 14px;
+    }
+
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 14px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 16px;
+    }
+    .banner {
+        background-image: url(/_nuxt/assets/images/indexbanner.jpg);
+        background-size: cover;
+        background-position: center; 
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 12px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 396px) {
+    .main-content{
+        width: 90%; 
+        flex-flow:column nowrap;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+
+    }
+    .main-content > div {
+        width: 90%;
+    }
+    .main h3{
+        text-align: center;
+        font-size: 18px;
+    }
+    .logo h1{
+        font-size: 18px;
+    }
+    .logo h2{
+        margin-top: 1px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .banner > div h3, .banner > div h4{
+        margin: 4px 0;
+        font-size: 12px;
+    }
+    .banner > div h3, .banner > div h3{
+        font-size: 16px;
+    }
+    .banner {
+        background-size: cover;
+        background-position: center; 
+        width: 120%;
+    }
+    footer  > div{
+        width: 75%; 
+
+        font-size: 12px;
+    }
+    nav > div{
+        width: 90%;
+        margin: auto
+    }
+    .info {
+        display: block;
+        position: absolute;
+        top: 36px;
+        font-size: 16px;
+        /* right: 60px; */
+    } 
+    .memlink {
+        position: absolute;
+        top: 34px;
+    } 
+
+    .info-text {
+        display: none;
+    }
+    
+}
 </style>
