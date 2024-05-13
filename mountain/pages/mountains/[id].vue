@@ -258,7 +258,10 @@ interface otherDayWeatherFace {
     weatherShow: number | string,
     rainRate: number | string,
 }
-const otherDayWeather: otherDayWeatherFace[] = [];
+
+const otherDayWeather: otherDayWeatherFace[] = [{date: 100,weatherShow:100, rainRate:200}];
+// const otherDayWeather: otherDayWeatherFace[] = [{date: 100,weatherShow:100, rainRate:200}];
+// let a = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3].elementValue[0].value
 
 for (let i = 0; i < 5; i++) {
     const weatherShow = count._rawValue.records.locations[0].location[10].weatherElement[6].time[3 + i * 2].elementValue[0].value;

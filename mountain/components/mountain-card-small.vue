@@ -43,7 +43,10 @@ const isClicked = ref<boolean>(false);
 
 <style scoped>
 @import url('assets/css/reset.css');
-
+@import url('assets/css/index.css');
+.recommand div{
+  margin: 2px;
+}
 @media (max-width:768px) {
     .location,
     .content-intro span{
