@@ -74,4 +74,7 @@
 <style scoped>
 @import url('assets/css/reset.css');
 @import url('assets/css/index.css');
+.banner {
+    background-image: url('~/assets/images/indexbanner.jpg'); 
+    }
 </style>
