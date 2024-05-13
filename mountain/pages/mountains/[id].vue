@@ -401,15 +401,21 @@ while (randomMountainList.value.length < 3) {
   </section>
 </template>
 
-<style>
+<style scoped>
 @import url('assets/css/mountains.css');
 
 @media (max-width:768px) {
     .items:nth-child(2){
         display: none;
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }}
 @media (max-width:414px) {
     .items:nth-child(1){
         display: none;
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }}
 </style>
