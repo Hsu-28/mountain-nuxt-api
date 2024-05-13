@@ -142,7 +142,6 @@ nav > div > div:last-child a{
 
 
 .banner {
-    background-image: url('/assets/images/indexbanner.jpg'); 
     background-size: cover; 
     background-position: 0 -120px; 
     width: 100%;
@@ -377,7 +376,6 @@ footer  > div{
         font-size: 16px;
     }
     .banner {
-        background-image: url(/_nuxt/assets/images/indexbanner.jpg);
         background-size: cover;
         background-position: center; 
         width: 100%;
