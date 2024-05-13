@@ -328,6 +328,9 @@ footer  > div{
         background-position: center; 
         width: 100%;
     }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
+    }
 }
 
 @media screen and (max-width: 470px) {
@@ -337,6 +340,9 @@ footer  > div{
     }
     .banner > div h3, .banner > div h3{
         font-size: 14px;
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }
 }
 
@@ -349,6 +355,9 @@ footer  > div{
         justify-content: center;
         margin: auto;
 
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }
     .main-content > div {
         width: 90%;
