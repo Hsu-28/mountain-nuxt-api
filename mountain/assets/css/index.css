@@ -325,7 +325,7 @@ footer  > div{
         font-size: 16px;
     }
     .banner {
-        background-image: url(/_nuxt/assets/images/indexbanner.jpg);
+        background-image: url('/images/indexbanner.jpg');
         background-size: cover;
         background-position: center; 
         width: 100%;
@@ -376,6 +376,7 @@ footer  > div{
         font-size: 16px;
     }
     .banner {
+        background-image: url('/images/indexbanner.jpg');
         background-size: cover;
         background-position: center; 
         width: 120%;
