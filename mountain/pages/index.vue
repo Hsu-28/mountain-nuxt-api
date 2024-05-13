@@ -57,4 +57,7 @@ console.log(searchQuery )
 <style>
 @import url('assets/css/reset.css');
 @import url('assets/css/index.css');
+div .banner {
+        background-image: url('/images/indexbanner.jpg');
+    }
 </style>

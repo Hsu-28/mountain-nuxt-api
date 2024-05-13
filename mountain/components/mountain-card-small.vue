@@ -53,7 +53,7 @@ const isClicked = ref<boolean>(false);
     .content-intro b{
         font-size: 14px;
     }
-    section .banner {
+    div .banner {
         background-image: url('/images/indexbanner.jpg');
     }
     }

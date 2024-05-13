@@ -66,7 +66,7 @@ nav > div > div:last-child a{
     text-decoration: none;
 }
 
-section .banner {
+div .banner {
     background-image: url('/images/indexbanner.jpg');
     background-size: cover; 
     background-position: 0 -120px; 
@@ -328,10 +328,10 @@ footer  > div{
         background-position: center; 
         width: 100%;
     }
-    section .banner {
+    div .banner {
         background-image: url('/images/indexbanner.jpg');
     }
-}
+    }
 
 @media screen and (max-width: 470px) {
     .banner > div h3, .banner > div h4{
@@ -341,9 +341,7 @@ footer  > div{
     .banner > div h3, .banner > div h3{
         font-size: 14px;
     }
-    section .banner {
-        background-image: url('/images/indexbanner.jpg');
-    }
+
 }
 
 
@@ -354,11 +352,8 @@ footer  > div{
         align-items: center;
         justify-content: center;
         margin: auto;
+    }
 
-    }
-    section .banner {
-        background-image: url('/images/indexbanner.jpg');
-    }
     .main-content > div {
         width: 90%;
     }
