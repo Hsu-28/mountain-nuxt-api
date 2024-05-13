@@ -32,6 +32,7 @@ console.log(searchQuery )
 
 <template>
   <section class="banner banner2" id="b">
+    <img src="/images/indexbanner.jpg" alt="">
     <div>
       <h3>遠離城市的喧囂，與群山一同舞蹈  </h3>
       <h4>山脈是自然的詩篇，每座山峰都是動人的詩句</h4>
@@ -57,7 +58,4 @@ console.log(searchQuery )
 <style>
 @import url('assets/css/reset.css');
 @import url('assets/css/index.css');
-div .banner {
-        background-image: url('/images/indexbanner.jpg');
-    }
 </style>
