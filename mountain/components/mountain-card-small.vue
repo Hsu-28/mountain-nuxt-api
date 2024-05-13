@@ -43,7 +43,7 @@ const isClicked = ref<boolean>(false);
 
 <style scoped>
 @import url('assets/css/reset.css');
-@import url('assets/css/index.css');
+/* @import url('assets/css/index.css'); */
 
 @media (max-width:768px) {
     .location,
