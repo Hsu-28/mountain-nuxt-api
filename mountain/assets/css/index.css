@@ -66,8 +66,8 @@ nav > div > div:last-child a{
     text-decoration: none;
 }
 
-div .banner {
-    background-image: url('/images/indexbanner.jpg');
+#b {
+    background-image: url('~/assets/images/indexbanner.jpg'); 
     background-size: cover; 
     background-position: 0 -120px; 
     width: 100%;
@@ -267,6 +267,9 @@ footer  > div{
 
 
 @media (max-width:788px) {
+    div .banner {
+        background-image: url('/images/indexbanner.jpg');
+    }
     .logo h1{
         font-size: 22px;
     }
@@ -328,9 +331,7 @@ footer  > div{
         background-position: center; 
         width: 100%;
     }
-    div .banner {
-        background-image: url('/images/indexbanner.jpg');
-    }
+
     }
 
 @media screen and (max-width: 470px) {

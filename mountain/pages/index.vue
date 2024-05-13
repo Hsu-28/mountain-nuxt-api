@@ -31,7 +31,7 @@ console.log(searchQuery )
 </script>
 
 <template>
-  <section class="banner">
+  <section class="banner banner2" id="b">
     <div>
       <h3>遠離城市的喧囂，與群山一同舞蹈  </h3>
       <h4>山脈是自然的詩篇，每座山峰都是動人的詩句</h4>
