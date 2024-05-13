@@ -315,6 +315,9 @@
     .main-intro h3{
         margin-top: 10px;
     }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
+    }
 } 
 
 @media screen and (max-width: 680px) {
@@ -325,6 +328,9 @@
         width: 70%;
         padding: 10px 0;
     }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
+    }
 } 
 
 @media screen and (max-width: 500px) {
@@ -333,6 +339,9 @@
     }
     .weather .today-weather{
         width: 80%;
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }
 } 
 
@@ -345,6 +354,9 @@
     }
     .today-weather div:last-child{
         border: none;
+    }
+    section .banner {
+        background-image: url('/images/indexbanner.jpg');
     }
 }     
 
