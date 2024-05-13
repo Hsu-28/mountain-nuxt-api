@@ -41,7 +41,7 @@ const isClicked = ref<boolean>(false);
   </div>
 </template>
 
-<style>
+<style scoped>
 @import url('assets/css/reset.css');
 @import url('assets/css/index.css');
 
