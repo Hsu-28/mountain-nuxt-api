@@ -227,10 +227,11 @@ const showMapF = () => {
 };
 
 // 取得位置
-// const location = parentMessage.value[i].locationID
 for (let i = 0; i < parentMessage.value.length; i++) {
   const location = parentMessage.value[i].locationID;
 }
+
+console.log(location)
 
 // 介接api
 const { data: count } = await useFetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-091?Authorization=CWA-964BE4A8-7D45-45A4-9304-CEE23BA30FF3&format=JSON&locationName=&elementName=')
@@ -266,10 +267,10 @@ for (let i = 0; i < 5; i++) {
         rainRate = "--"
     }
     const dateStr = count._rawValue.records.locations[0].location[10].weatherElement[10].time[3 + i * 2].startTime;
-    // 创建一个新的 Date 对象
+    // 創建一個Data
     const date = new Date(dateStr);
-    // 从 Date 对象中提取月份和日期
-    const month = ("0" + (date.getMonth() + 1)).slice(-2); // 月份从0开始计数，因此要加1
+    // 拿月份跟日期
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
     const day = ("0" + date.getDate()).slice(-2);
     // 组合成所需的格式，例如：05-07
     const formattedDate = `${month}/${day}`;
@@ -297,6 +298,7 @@ const weatherImages = {
                 "晴午後短暫雷陣雨":"/images/weather/suntemth.svg",
                 "多雲午後短暫雷陣雨":"/images/weather/dsr.svg",
                 "多雲時陰短暫陣雨或雷雨":"/images/weather/darktemrainth.svg",
+                "多雲短暫陣雨或雷雨":"/images/weather/darktemrainth.svg",
 }
 
 
