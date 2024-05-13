@@ -66,7 +66,6 @@ nav > div > div:last-child a{
     text-decoration: none;
 }
 
-
 .banner {
     background-image: url('/images/indexbanner.jpg');
     background-size: cover; 
@@ -325,7 +324,6 @@ footer  > div{
         font-size: 16px;
     }
     .banner {
-        background-image: url('/images/indexbanner.jpg');
         background-size: cover;
         background-position: center; 
         width: 100%;
@@ -376,7 +374,6 @@ footer  > div{
         font-size: 16px;
     }
     .banner {
-        background-image: url('/images/indexbanner.jpg');
         background-size: cover;
         background-position: center; 
         width: 120%;
