@@ -227,9 +227,9 @@ const showMapF = () => {
 };
 
 // 取得位置
-for (let i = 0; i < parentMessage.value.length; i++) {
-  const location = parentMessage.value[i].locationID;
-}
+
+const location = parentMessage.value[i].locationID;
+
 
 console.log(location)
 
@@ -259,33 +259,56 @@ interface otherDayWeatherFace {
     rainRate: number | string,
 }
 
+// const otherDayWeather: otherDayWeatherFace[] = [];
 const otherDayWeather: otherDayWeatherFace[] = [];
-// const otherDayWeather: otherDayWeatherFace[] = [{date: 100,weatherShow:100, rainRate:200}];
-// let a = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3].elementValue[0].value
 
-for (let i = 0; i < 5; i++) {
-    const weatherShow = count._rawValue.records.locations[0].location[10].weatherElement[6].time[3 + i * 2].elementValue[0].value;
-    let rainRate = count._rawValue.records.locations[0].location[10].weatherElement[0].time[3 + i * 2].elementValue[0].value;
+// const weatherShow = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3].elementValue[0].value
+// let firstPeriodIndex = weatherShow.indexOf("。");
+// let substrBeforeFirstPeriod = weatherShow.substring(0, firstPeriodIndex);
+
+// const rainRate = count._rawValue.records.locations[0].location[location].weatherElement[0].time[3].elementValue[0].value;
+
+// const dateStr = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3 ].startTime;
+// const date = new Date(dateStr);
+// // 拿月份跟日期
+// const month = ("0" + (date.getMonth() + 1)).slice(-2);
+// const day = ("0" + date.getDate()).slice(-2);
+// // 组合成所需的格式，例如：05-07
+// const formattedDate = `${month}/${day}`;
+// const newWeatherData: otherDayWeatherFace = {
+//     date: formattedDate,
+//     rainRate: rainRate,
+//     weatherShow: substrBeforeFirstPeriod
+// };
+
+// // 將新資料放入陣列
+// otherDayWeather.push(newWeatherData);
+for (let day = 0; day < 5; day++) {
+    const weatherShow = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3 + day * 2].elementValue[0].value;
+    let firstPeriodIndex = weatherShow.indexOf("。");
+    let substrBeforeFirstPeriod = weatherShow.substring(0, firstPeriodIndex);
+    
+    let rainRate = count._rawValue.records.locations[0].location[location].weatherElement[0].time[3 + day * 2].elementValue[0].value;
     if (rainRate.trim() == '') {
         rainRate = "--"
     }
-    const dateStr = count._rawValue.records.locations[0].location[10].weatherElement[10].time[3 + i * 2].startTime;
-    // 創建一個Data
+    const dateStr = count._rawValue.records.locations[0].location[location].weatherElement[10].time[3 + day * 2].startTime;
     const date = new Date(dateStr);
     // 拿月份跟日期
     const month = ("0" + (date.getMonth() + 1)).slice(-2);
-    const day = ("0" + date.getDate()).slice(-2);
-    // 组合成所需的格式，例如：05-07
-    const formattedDate = `${month}/${day}`;
-    // console.log(formattedDate)
-
-
-    otherDayWeather[i] = {
+    const dayOfMonth = ("0" + date.getDate()).slice(-2);
+    // 组合成所需的格式，例如：05/07
+    const formattedDate = `${month}/${dayOfMonth}`;
+    const newWeatherData: otherDayWeatherFace = {
         date: formattedDate,
-        weatherShow: weatherShow,
-        rainRate: rainRate
+        rainRate: rainRate,
+        weatherShow: substrBeforeFirstPeriod
     };
+    
+    // 将新数据放入数组
+    otherDayWeather.push(newWeatherData);
 }
+console.log(otherDayWeather);
 
 
 const weatherImages = {
