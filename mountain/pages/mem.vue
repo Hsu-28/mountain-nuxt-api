@@ -173,24 +173,24 @@ button{
     h3{
         margin-top: -10px;
     }
-    .climbs-item[data-v-f7e9b573]{
+    .climbs-item{
         flex-flow: column nowrap;
         width: 100%;
         margin-top: 20px;
     }
-    .items[data-v-f7e9b573],
-    .climb-content[data-v-f7e9b573]{
+    .items,
+    .climb-content{
         width: 80%;
         margin: auto;
         margin-bottom: 20px;
     }
-    textarea[data-v-f7e9b573]{
+    textarea{
         margin-bottom: 30px;
     }
-    button[data-v-f7e9b573]{
+    button{
         bottom: 10px;
     }
-    .noclimb[data-v-f7e9b573]{
+    .noclimb{
       height: 100%;
       width: 100%;
     }

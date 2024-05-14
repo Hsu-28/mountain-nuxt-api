@@ -129,7 +129,7 @@
     width: 300px;
     height: 200px;
   }
-  .article-list-container div[data-v-f57fc118]{
+  .article-list-container div{
     margin: 8px;
   }
 }
@@ -144,7 +144,7 @@
 
 
 @media (max-width:768px) {
-  .article-list-container .article-img[data-v-f57fc118] {
+  .article-list-container .article-img {
     width: 50%;
   }
 
